@@ -42,7 +42,7 @@
                 <span>{{ 'back' | translate(locale) }}</span>
             </div>
             <div :class="['stepper-button next', !canContinue ? 'deactivated' : '']" @click="nextStep()">
-                <span>{{ (finalStep) ? 'finish' : 'next' | translate(locale) }}</span>
+                <span>{{ (finalStep) ? 'finish' : currentStep.nextText | translate(locale) }}</span>
                 <i class="material-icons">keyboard_arrow_right</i>
             </div>
         </div>
@@ -76,13 +76,15 @@ export default {
             icon: "mail",
             name: "first",
             title: "Sample title 1",
-            subtitle: "Subtitle sample"
+            subtitle: "Subtitle sample",
+            nextText: "next"
           },
           {
             icon: "report_problem",
             name: "second",
             title: "Sample title 2",
-            subtitle: "Subtitle sample"
+            subtitle: "Subtitle sample",
+            nextText: "next"
           }
         ];
       }
